@@ -3,3 +3,17 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+cv:
+    path: /cv
+    controller: App\Controller\HomeController::cv
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+portfolio:
+    path: /portfolio
+    controller: App\Controller\DefaultController::portfolio
+
+loisir:
+    path: /loisir
+    controller: App\Controller\LoisirController::loisir

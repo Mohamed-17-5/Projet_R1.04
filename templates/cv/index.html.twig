@@ -1,0 +1,189 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon CV{% endblock %}
+
+{% block body %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .header {
+        background-color: #3498db;
+        color: #fff;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .header p {
+        font-size: 1.2rem;
+        margin: 15px 0 0;
+    }
+    .section {
+        padding: 50px 20px;
+    }
+    .section-title {
+        font-size: 2rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .section-title::after {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background: #3498db;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .timeline {
+        border-left: 3px solid #3498db;
+        margin: 0 auto;
+        padding: 20px;
+        max-width: 800px;
+        position: relative;
+    }
+    .timeline-item {
+        margin-bottom: 30px;
+        position: relative;
+        padding-left: 20px;
+    }
+    .timeline-item::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background: #3498db;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        left: -9px;
+        top: 0;
+    }
+    .timeline-item h3 {
+        font-size: 1.5rem;
+        color: #2c3e50;
+        margin: 0 0 5px;
+    }
+    .timeline-item p {
+        font-size: 1rem;
+        color: #555;
+        margin: 0;
+    }
+    .skills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .skill {
+        width: 200px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+    .skill:hover {
+        transform: translateY(-10px);
+        background-color: #f4f8fb;
+    }
+    .skill h4 {
+        font-size: 1.2rem;
+        color: #2c3e50;
+        margin: 0;
+    }
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #2c3e50;
+        color: #fff;
+    }.timeline-item ul li {
+    color: #2c3e50; /* Couleur de texte plus foncée */
+    font-size: 1rem;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+</style>
+
+<header class="header">
+    <h1>Mon CV</h1>
+    <p>Recherche alternance en Réseaux et Télécommunications</p>
+</header>
+
+<section class="section">
+    <h2 class="section-title">Expériences Professionnelles</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>Vacataire - Ville de Roanne</h3>
+            <p>Médiathèque, Musée Joseph Déchelette, Théâtre Municipal, 09/2024 - Présent</p>
+            <ul>
+                <li>Accueil, information et assistance lors des événements</li>
+                <li>Organisation d'activités culturelles et visites guidées</li>
+                <li>Gestion des prêts, retours et réserves</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <h3>Médiateur de Vie Étudiante</h3>
+            <p>IUT de Roanne, 01/2024 - Présent</p>
+            <ul>
+                <li>Assistance administrative et intégration des nouveaux étudiants</li>
+                <li>Communication interne via les réseaux sociaux</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <h3>Projet Académique : Conception d'un Réseau</h3>
+            <p>IUT de Roanne, 05/2023 - 06/2023</p>
+            <ul>
+                <li>Conception et configuration du réseau (adressage IP, VLANs, routage dynamique)</li>
+                 
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Formation</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>B.U.T. Réseaux et Télécommunications</h3>
+            <p>Université Jean Monnet, IUT de Roanne, 09/2024 - Présent</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Baccalauréat Scientifique</h3>
+            <p>Cours privé Sacré-Cœur, Dakar, 2023</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2 class="section-title">Compétences</h2>
+    <div class="skills">
+        <div class="skill">
+            <h4>Administration des services réseaux</h4>
+        </div>
+        <div class="skill">
+            <h4>Configuration des matériels Cisco</h4>
+        </div>
+      
+        <div class="skill">
+            <h4>Systèmes Linux/Windows</h4>
+        </div>
+        <div class="skill">
+            <h4>Sécurisation des postes clients</h4>
+        </div>
+        
+    </div>
+</section>
+
+<footer>
+    <p>&copy; {{ "now"|date("Y") }} Mon CV. Tous droits réservés.</p>
+</footer>
+{% endblock %}
