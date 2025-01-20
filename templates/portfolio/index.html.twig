@@ -1,20 +1,144 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PortfolioController!{% endblock %}
+{% block title %}Portfolio RT1{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .header {
+        background-color: #3498db;
+        color: #fff;
+        padding: 50px 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .header h1 {
+        font-size: 3rem;
+        margin: 0;
+    }
+    .header p {
+        font-size: 1.2rem;
+        margin: 15px 0 0;
+    }
+    .section {
+        padding: 50px 20px;
+    }
+    .section-title {
+        font-size: 2rem;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .section-title::after {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background: #3498db;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .skill-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .skill-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .skill-card h4 {
+        font-size: 1.5rem;
+        color: #3498db;
+        margin-bottom: 10px;
+    }
+    .skill-card p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 10px;
+    }
+    .skill-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .skill-card ul li {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 5px;
+    }
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #2c3e50;
+        color: #fff;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<header class="header">
+    <h1>Portfolio RT1</h1>
+    <p>Administrer les réseaux et l'Internet</p>
+</header>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/Seydina Mohamed/projet_seydina/src/Controller/PortfolioController.php</code></li>
-        <li>Your template at <code>C:/Users/Seydina Mohamed/projet_seydina/templates/portfolio/index.html.twig</code></li>
-    </ul>
-</div>
+<section class="section">
+    <h2 class="section-title">Compétences RT1</h2>
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h4>AC11.01 : Lois fondamentales de l’électricité</h4>
+            <p><strong>Niveau d'acquisition :</strong> 3/4</p>
+            <p><strong>Preuves :</strong> J'ai été bon en TD mais la dernière partie du TP R104 m'a causé problème avec les oscilloscopes.</p>
+            <p><strong>Analyse critique :</strong> Besoin d'améliorer mes compétences sur l'utilisation des oscilloscopes dans des cas complexes.</p>
+        </div>
+        <div class="skill-card">
+            <h4>AC11.02 : Architecture des systèmes numériques</h4>
+            <p><strong>Niveau d'acquisition :</strong> 4/4</p>
+            <p><strong>Preuves :</strong> Aussi bon en TD qu'en TP, je n'ai pas rencontré de problèmes.</p>
+            <p><strong>Analyse critique :</strong> J'ai une compréhension solide des fondements et des principes de l'architecture.</p>
+        </div>
+        <div class="skill-card">
+            <h4>AC11.03 : Configuration des fonctions de base du réseau local</h4>
+            <p><strong>Niveau d'acquisition :</strong> Non spécifié</p>
+            <p><strong>Preuves :</strong> Non documenté</p>
+            <p><strong>Analyse critique :</strong> À compléter pour obtenir un retour d'expérience clair.</p>
+        </div>
+        <div class="skill-card">
+            <h4>AC11.04 : Principes des systèmes d’exploitation</h4>
+            <p><strong>Niveau d'acquisition :</strong> Non spécifié</p>
+            <p><strong>Preuves :</strong> Non documenté</p>
+            <p><strong>Analyse critique :</strong> Nécessite une validation avec plus de travaux pratiques.</p>
+        </div>
+        <div class="skill-card">
+            <h4>AC11.05 : Identification des dysfonctionnements du réseau local</h4>
+            <p><strong>Niveau d'acquisition :</strong> Non spécifié</p>
+            <p><strong>Preuves :</strong> Non documenté</p>
+            <p><strong>Analyse critique :</strong> Besoin d'explorer des scénarios de panne réels.</p>
+        </div>
+        <div class="skill-card">
+            <h4>AC11.06 : Installation d’un poste client</h4>
+            <p><strong>Niveau d'acquisition :</strong> Non spécifié</p>
+            <p><strong>Preuves :</strong> Non documenté</p>
+            <p><strong>Analyse critique :</strong> À travailler pour maîtriser la procédure et la documentation associée.</p>
+        </div>    <br> <a href="/accueil"> Accueil</a>
+      <br> <a href="/loisir"> Loisir</a> <br>   <a href="/cv">CV</a>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; {{ "now"|date("Y") }} Portfolio RT1. Tous droits réservés.</p>
+</footer>
 {% endblock %}
